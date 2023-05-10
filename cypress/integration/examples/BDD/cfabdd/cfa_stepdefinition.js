@@ -45,7 +45,7 @@ When('user enters some text in "Part Number"',function()
 {
     cy.get("[title='Part Number']").next().next()
     .find("input")
-    .type("automation Part number3",{force:true})
+    .type("automation Part number6",{force:true})
 });
 When('user  clicks on "Parts Classification" and expand and selects the value from the given dropdown "Parts Classification"',function()
 {
@@ -67,12 +67,13 @@ When('user click on Next Button',function()
    cy.get("#app").shadow().find("#contentViewManager")
 .find("#wizardManage").find("#next")
 .find("#buttonTextBox").eq(1).click({force:true})
-cy.get("[class='action-button-focus dropdownText btn btn-outline-primary m-l-5']").click()
+cy.get("[class='action-button-focus dropdownText btn btn-outline-primary m-l-5']").click({force:true})
 
 });
 When('user click on "Show me the entity" button',function()
 {
    cy.get("[title='Show me the entity']").click({force:true})
+   cy.wait(2000)
 });
 When('user click on "Hazardous and Regulatory Compliance" link',function()
 {
@@ -95,11 +96,11 @@ When('user click on Save Button1',function()
 });
 When('user click on Summary tab',function()
 {
-    cy.get("[id='tab-summary']").click()
+    cy.get("[id='tab-summary']").click({force:true})
 });
 When('user click on "Required Attributes Validation" link',function()
 {
-    cy.get("[title='Required Attributes Validation']").click()
+    cy.get("[title='Required Attributes Validation']").click({force:true})
 cy.wait(9000)
 });
 When('user  clicks on "Country of Origin Primary " and selects value from the given dropdown "Country of Origin Primary "',function()
@@ -299,7 +300,7 @@ When('user  clicks on "Price UOM" and selects date from the given dropdown "Pric
 When('user  clicks on "Product Description – Long" and enter some text value in "Enter more values here to add"',function()
 {
     cy.get("[title='Product Description – Long']").next().click({force:true})
-    cy.pause()
+
     cy.get("[aria-labelledby='paper-input-label-40']").type("automation_test_values",{force:true})
   // cy.get("[class='input-element'] input[autocorrect='off']")
     cy.get("[icon='pebble-icon:action-add-fill']").click({force:true})

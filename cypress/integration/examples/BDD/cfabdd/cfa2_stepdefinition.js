@@ -60,7 +60,7 @@ When('user enters Start Date in Region Details page',function()
     cy.get("[class='html-face']").eq(2).click({force:true})
     cy.get("[class='html-face']").eq(2).click({force:true})
     cy.get("[class='html-face']").eq(2).click({force:true})
-    cy.wait(2000)
+    // cy.wait(2000)
     cy.get("[class='popupContent']").eq(1).contains("4").eq(0).click({force:true})
   //  cy.get("body > div:nth-child(12) > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > div:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child("+String(globalThis.randomnumber3)+") > td:nth-child("+String(globalThis.randomnumber3)+") > div:nth-child(1)").click()
 });
@@ -87,8 +87,8 @@ Then('confirmation pop-up is displayed',function()
 Given('User is on location user portal page',function()
 {
     cy.visit("https://chick-fil-a-preprod.scloud.stibo.com/")
-    cy.get('#username').type(logindata.username);
-    cy.get('#password').type(logindata.password);
+    cy.get('#username').type("FIELDOPSTEST");
+    cy.get('#password').type("FIELDOPSTEST");
     cy.get('#kc-login').click();
     cy.get("[title='Location User Portal']").click()
     cy.get("div[id='Create_Area_Support_Team'] div div[class='status-selector__wrapper dashboard-widget-inner'] div[class='status-selector__content with-assigneePanel with-initiatePanel with-2-elements'] div[class='status-selector__assignees'] div[title='Show all items assigned to me or any group I am a member of'] div i[class='material-icons']").click()
@@ -140,7 +140,7 @@ When('user enters <Start Date> in general attributes tab',function()
 {
         cy.get("div[id='Start_Date'] div[class='widgetAndIconsWrapper'] div div input[placeholder='yyyy-MM-dd']").click()
         cy.get("[class='popupContent']").eq(1).contains("1").eq(0).click({force:true})
-      //  cy.get(":nth-child("+globalThis.randomnumber3+") > :nth-child("+globalThis.randomnumber3+") > .datePickerDay").click()
+
 });
 When('user enters <Assignment Start Date> in general attributes tab',function()
 {
@@ -150,9 +150,7 @@ When('user enters <Assignment Start Date> in general attributes tab',function()
      cy.get('.portal-alert-popup-close-box > .material-icons').click()
 
         cy.get("div[id='End_Date'] div[class='widgetAndIconsWrapper'] div div input[placeholder='yyyy-MM-dd']").click()
-        // cy.get('.datePickerNextButton > .html-face').click()
-        // cy.get('.datePickerNextButton > .html-face').click()
-        // cy.get(":nth-child("+(globalThis.randomnumber3)+") > :nth-child("+(globalThis.randomnumber3)+") > .datePickerDay").click()
+  
         cy.get("[class='html-face']").eq(2).click({force:true})
     cy.get("[class='html-face']").eq(2).click({force:true})
     cy.get("[class='html-face']").eq(2).click({force:true})
@@ -168,7 +166,7 @@ When('user click on "Add roles" select <Reference Type> and <Reference Target>',
 {
     for(let i=0;i<5;i++)
     {
-   // cy.get("body > div:nth-child(10) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > i:nth-child(1)").click({force:true})
+   
    cy.get("[title='Create a new reference']").eq(0).click({force:true})
    if(i==2 || i==3 || i==4)
     {
@@ -191,9 +189,7 @@ When('user selects "Assignment start date" for each role',function()
         {
             cy.wait(4000)
         cy.get("td:nth-child(5)").contains("yyyy-MM-dd").eq(0).dblclick()
-        // cy.get("[class='gwt-TextBox DatePickerView']").click()
          cy.get('.datePickerNextButton > .html-face').click({force:true})
-        // cy.get("[class='datePickerDay ']").eq(globalThis.randomnumber3).click()
         cy.get("[class='datePickerDay ']").contains("2").eq(0).click({force:true})
         cy.get("[class='stibo-GraphicsButton']").contains("Save").click()
         }
