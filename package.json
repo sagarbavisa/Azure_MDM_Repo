@@ -8,7 +8,7 @@
     "riversand_test": "node_modules\\.bin\\cypress run --spec cypress\\integration\\examples\\BDD\\cfabdd.feature --headed --browser chrome",
     "Step_test": "node_modules\\.bin\\cypress run --spec cypress\\integration\\examples\\BDD\\cfabdd2.feature --headed --browser chrome",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:run_spec": "npx cypress run --spec cypress\\integration\\examples\\BDD\\cfabdd2.feature ",
+    "cy:run_spec": "npx cypress run --spec cypress\\integration\\examples\\BDD\\cfabdd.feature ",
     "headed": "npx run cy:run_spec -- --headed --browser chrome & npm run cy:run_spec -- --headed --browser electron",
     "chrome": "npx run test -- --headed browser firefox",
     "generatereports": "npm run test -- --reporter mochawesome --browser chrome --headed"
