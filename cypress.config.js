@@ -91,7 +91,7 @@ module.exports = defineConfig({
     experimentalOriginDependencies : true,
     experimentalOriginDependencies : true,
    // specPattern: "cypress/integration/examples/Step_BDD/*.feature",
-    specPattern: "cypress/integration/examples/BDD/cfabdd2.feature",
+    specPattern: "cypress/integration/examples/BDD/cfabdd.feature",
  // specPattern: "cypress/integration/examples",
   //"C://Users//sbavisa//CypressAutomation//cypress//integration//examples//BDD//cfabdd//cfa_stepdefinition.js"
   //"C://Users//sbavisa//CypressAutomation//cypress//integration//examples//step_BDD//cfabdd//cfa2_stepdefinition.js"
