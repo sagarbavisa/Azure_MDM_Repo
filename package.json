@@ -24,8 +24,8 @@
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
     "stepDefinitions": [
-      
-      "C:/Users/sbavisa/CypressAutomation/cypress/integration/examples/BDD/cfabdd/cfa2_stepdefinition.js"
+    
+      "cypress/integration/examples/BDD/cfabdd/cfa2_stepdefinition.js"
     ],
     "json": {
       "enabled": true,
