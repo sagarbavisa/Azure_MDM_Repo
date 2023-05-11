@@ -52,6 +52,7 @@ class Homepage
     {
         return cy.contains('Top')
     }
+
     getFrameloaded()
     {
         return cy.frameLoaded('#courses-iframe')
