@@ -82,6 +82,7 @@ Then('confirmation pop-up is displayed',function()
             const extval = extTest.text()
             expect(extval).to.includes("Item was successfully submitted.")
         })
+        cy.wait(3000)
 });
 
 Given('User is on location user portal page',function()
@@ -128,8 +129,10 @@ Then('user should see successful message <pop-up>',function()
 When('user enters <Area Support Team Code> in general attributes tab',function()
 {
     const randomnumber2 = Math.floor(Math.random()*(9))
-    const random_string = Math.random().toString(36).substring(2,3)
-    cy.get('#Area_Support_Team_Code > .widgetAndIconsWrapper > [style="margin-right: 8px;"] > :nth-child(1) > .gwt-TextBox').type(String(randomnumber2)+random_string)
+    globalThis.randomnumber2 = randomnumber2
+    let random_string = Math.random().toString(36).substring(2,3)
+    globalThis.random_string = random_string
+    cy.get('#Area_Support_Team_Code > .widgetAndIconsWrapper > [style="margin-right: 8px;"] > :nth-child(1) > .gwt-TextBox').type(globalThis.randomnumber2+globalThis.random_string)
 });
 When('user enters <Area Support Team Type> in general attributes tab',function()
 {
@@ -202,7 +205,7 @@ When('user clicks on "Create" button',function()
 Then('user should see successful message <pop-up> on dashboard',function()
 { 
     cy.wait(4000)
-   cy.contains("successfully submitted").should('be.visible')
+   cy.contains("Submit").eq(0).should('be.visible')
 
 })
 

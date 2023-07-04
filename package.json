@@ -25,7 +25,8 @@
     "nonGlobalStepDefinitions": true,
     "stepDefinitions": [
     
-      "cypress/integration/examples/BDD/cfabdd/cfa_stepdefinition.js"
+      "cypress/integration/examples/BDD/cfabdd/cfa_stepdefinition.js",
+      "cypress/integration/examples/BDD/cfabdd/cfa2_stepdefinition.js"
     ],
     "json": {
       "enabled": true,

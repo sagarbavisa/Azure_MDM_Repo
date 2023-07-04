@@ -27,10 +27,6 @@ import { JwtDecodeOptions } from 'jwt-decode'
 
   })
   
-
-
-
-
   Cypress.Commands.add('assigneeclick',(item_number,user_text_value) => 
   {
     cy.get('table tbody tr td:nth-child(2) div div span.DomainNodeCell').each(($e1,index,$list) =>
@@ -99,6 +95,23 @@ import { JwtDecodeOptions } from 'jwt-decode'
               })
             }
         })
+      })
+
+      Cypress.Commands.add('new_nest_frame',(parent_frame_cssSelector, child_frame_cssSelector, element_path, input_text_value, action) => 
+      {
+        if(action=='type')
+        { 
+        cy.get(parent_frame_cssSelector).its('0.contentDocument').should('exist').its('body')
+        .find(child_frame_cssSelector).its('0.contentDocument').should('exist').its('body')
+        .find(element_path).type(input_text_value)
+        }
+        else
+        {
+          cy.get(parent_frame_cssSelector).its('0.contentDocument').should('exist').its('body')
+          .find(child_frame_cssSelector).its('0.contentDocument').should('exist').its('body')
+          .find(element_path).click()
+        }
+      
       })
 
       
