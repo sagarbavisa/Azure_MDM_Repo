@@ -8,7 +8,11 @@ jobs:
         uses: actions/checkout@v3.5.3
       - name: Cypress.io
         uses: cypress-io/github-action@v5.8.2
-        with: 
-         build: npm run build
-         start: npm start
-         browser: chrome
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Cypress tests
+        run: npx cypress Step_test
